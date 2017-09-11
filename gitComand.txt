@@ -1,0 +1,85 @@
+Git command
+//check if the git is installed or not on terminal
+sudachoms-MacBook-Pro:~ sudachom$ git --version
+git version 2.10.1
+
+//add gitHub account
+sudachoms-MacBook-Pro:~ sudachom$ git config --global user.email"sudachom@yahoo.com"
+sudachoms-MacBook-Pro:~ sudachom$ git config --global user.name"sudachom"
+
+//create the git floder and located the floder
+sudachoms-MacBook-Pro:~ sudachom$ cd /Users/sudachom/Desktop/gitFloder
+sudachoms-MacBook-Pro:gitFloder sudachom$ 
+
+//add the git to the floder
+sudachoms-MacBook-Pro:gitFloder sudachom$  defaults write com.apple.finder AppleShowAllFiles YES
+
+//after that press OPtion and Comand key on the Finder and click relaunch after that you can see the .git on the floder
+
+// add the new file in the floder
+sudachoms-MacBook-Pro:gitFloder sudachom$ touch test2.txt
+
+//get the status on the git floder
+udachoms-MacBook-Pro:gitFloder sudachom$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   test1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	gitComand.txt
+	test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+//add the file to the git to 
+sudachoms-MacBook-Pro:gitFloder sudachom$ git add test2.txt
+//using the wildcast to all the file .
+sudachoms-MacBook-Pro:gitFloder sudachom$ git add .
+
+//add the file to the respory on the github
+sudachoms-MacBook-Pro:gitFloder sudachom$ git commit -m "added test2.txt"
+
+[master 1d3ee92] added test2.txt
+ Committer: sudachom samitthan <sudachom@sudachoms-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test2.txt
+sudachoms-MacBook-Pro:gitFloder sudachom$ 
+
+//add the file to the github website respory https://github.com/sudachom/Repo1
+sudachoms-MacBook-Pro:gitFloder sudachom$ git remote add origin https://github.com/sudachom/Repo1
+
+// set up the origin master to show to the gitHub and update the raspory 
+sudachoms-MacBook-Pro:gitFloder sudachom$ git push -u origin master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 292 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/sudachom/Repo1.git
+   0752740..1d3ee92  master -> master
+Branch master set up to track remote branch master from origin.
+sudachoms-MacBook-Pro:gitFloder sudachom$ 
+
+
+
+
+
+
+
